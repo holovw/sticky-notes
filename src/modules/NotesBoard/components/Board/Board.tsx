@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
 
 import { Note } from '../Note';
 
@@ -105,7 +106,7 @@ export function Board ({ notes, setNotes }: BoardProps) {
             window.removeEventListener('pointermove', onPointerMove);
             window.removeEventListener('pointerup', onPointerUp);
         };
-    }, [notes, dragState, isOverTrash]);
+    }, [notes, dragState, isOverTrash, setNotes]);
 
     const liftNote = (noteId: string) => {
         const nextIndexZ = getNextIndexZ(notes);
@@ -142,7 +143,7 @@ export function Board ({ notes, setNotes }: BoardProps) {
                 />
             ))}
 
-            <div ref={trashRef} className={styles.trash}>Trash</div>
+            <div ref={trashRef} className={clsx(styles.trash, isOverTrash && styles.trashActive)}>Trash</div>
         </div>
     );
 }

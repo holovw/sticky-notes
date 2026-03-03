@@ -3,6 +3,7 @@ interface ErrorServiceInterface {
     warning(): void;
 }
 
+// TODO: integrate logging service
 class ErrorService implements ErrorServiceInterface {
     log(message: string): void {
         console.log(message);

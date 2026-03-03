@@ -17,4 +17,8 @@
   place-items: center;
   border: 2px dashed colors.$color-gray-500;
   border-radius: 10px;
+
+  &.trashActive {
+    border: 4px solid colors.$color-gray-600;
+  }
 }
