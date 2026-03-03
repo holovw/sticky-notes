@@ -40,10 +40,14 @@ export const Note = React.memo(function ({isDragging, note, drag, updateText}: N
                 onChange={(e) => setDraftText(e.target.value)}
                 onBlur={() => updateText(note.id, draftText)}
             />
-            <button className={styles.resizeButton} onPointerDown={(event) => {
-                event.stopPropagation();
-                drag(event, DRAG_TYPE.RESIZE, note)
-            }}>
+            <button
+                title="Resize note"
+                className={styles.resizeButton}
+                onPointerDown={(event) => {
+                    event.stopPropagation();
+                    drag(event, DRAG_TYPE.RESIZE, note);
+                }}
+            >
                 <ResizeHandleSVG className={styles.resizeIcon}/>
             </button>
         </div>

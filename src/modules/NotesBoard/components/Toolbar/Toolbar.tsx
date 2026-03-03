@@ -16,6 +16,7 @@ export function Toolbar({ onCreate }: ToolbarProps) {
             {Object.entries(NOTE_COLORS_MAP).map(([colorName, colorValue]) => (
                 <button
                     key={colorName}
+                    title="Pick note's color"
                     style={{backgroundColor: colorValue}}
                     className={clsx(styles.colorButton, currentColor === colorName && styles.colorButton__active)}
                     onClick={() => setCurrentColor(colorName)}
@@ -23,6 +24,7 @@ export function Toolbar({ onCreate }: ToolbarProps) {
             ))}
 
             <button
+                title="Create a note"
                 className={clsx(styles.createButton)}
                 onClick={() => onCreate(currentColor)}
             >
