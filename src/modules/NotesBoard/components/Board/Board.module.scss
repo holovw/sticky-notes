@@ -1,0 +1,20 @@
+@use '../../../../styles/colors';
+
+.container {
+  position: relative;
+  flex: 1;
+  background-size: 18px 18px;
+  background-image: radial-gradient(circle at 1px 1px, colors.$color-gray-300, 1px, transparent 0);
+}
+
+.trash {
+  width: 200px;
+  height: 200px;
+  right: 20px;
+  bottom: 20px;
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 2px dashed colors.$color-gray-500;
+  border-radius: 10px;
+}
