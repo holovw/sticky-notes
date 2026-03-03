@@ -32,6 +32,7 @@ export const Note = React.memo(function ({isDragging, note, drag, updateText}: N
             onPointerDown={(event) => drag(event, DRAG_TYPE.MOVE, note)}
         >
             <textarea
+                name="note-text"
                 value={draftText}
                 className={styles.textArea}
                 placeholder="Write your note"

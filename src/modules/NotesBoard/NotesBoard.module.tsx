@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState} from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import { Board, Toolbar } from './components';
@@ -10,11 +10,7 @@ import type { Note } from './types';
 import styles from './NotesBoard.module.scss';
 
 export function NotesBoard() {
-    const [notes, setNotes] = useState<Note[]>([]);
-
-    useEffect(() => {
-        setNotes(noteService.get());
-    }, []);
+    const [notes, setNotes] = useState<Note[]>(noteService.get());
 
     useEffect(() => {
         noteService.set(notes);
