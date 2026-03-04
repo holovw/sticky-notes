@@ -52,7 +52,7 @@ export function Board ({ notes, setNotes }: BoardProps) {
             const dy = event.clientY - dragState.startY;
 
             if (dragState.type === DRAG_TYPE.MOVE) {
-                setNotes(notes.map((note) => {
+                setNotes(notes => notes.map((note) => {
                     if (note.id !== dragState.id) {
                         return note;
                     }
@@ -76,7 +76,7 @@ export function Board ({ notes, setNotes }: BoardProps) {
             }
 
             if (dragState.type === DRAG_TYPE.RESIZE) {
-                setNotes(notes.map((note) => {
+                setNotes(notes => notes.map((note) => {
                     if (note.id !== dragState.id) {
                         return note;
                     }
@@ -92,7 +92,7 @@ export function Board ({ notes, setNotes }: BoardProps) {
 
         const onPointerUp = () => {
             if (dragState.type === DRAG_TYPE.MOVE && isOverTrash) {
-                setNotes(notes.filter(note => note.id !== dragState.id));
+                setNotes(notes => notes.filter(note => note.id !== dragState.id));
             }
 
             setIsOverTrash(false);
@@ -106,7 +106,7 @@ export function Board ({ notes, setNotes }: BoardProps) {
             window.removeEventListener('pointermove', onPointerMove);
             window.removeEventListener('pointerup', onPointerUp);
         };
-    }, [notes, dragState, isOverTrash, setNotes]);
+    }, [dragState, isOverTrash, setNotes]);
 
     const liftNote = (noteId: string) => {
         const nextIndexZ = getNextIndexZ(notes);

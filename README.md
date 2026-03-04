@@ -1,7 +1,15 @@
 # Sticky Notes App
 
-Plan activities, group notes using interactive board and different colors, delete your notes using trash can and of course all your work will be saved.
+Plan activities and organize ideas on an interactive board with colored notes.  
+Drag notes around, resize them, delete them in the trash area, and keep your work saved between sessions.
 
-## How to install
+![Board screenshot](./docs/images/board.png)
 
-Type in a console: npm install && npm run dev
+## Installation
+
+Run in terminal:
+
+```bash
+npm install
+npm run dev
+```

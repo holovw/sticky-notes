@@ -15,7 +15,7 @@ interface NoteProps {
     updateText: (noteId: string, text: string) => void;
 }
 
-export const Note = React.memo(function ({isDragging, note, drag, updateText}: NoteProps) {
+export const Note = React.memo(function ({ isDragging, note, drag, updateText }: NoteProps) {
     const [draftText, setDraftText] = useState(note.text);
 
     return (
